@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My To Do List</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="title">My To Do List</h1>
+<button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+<p class="subtitle">hal kecil yang harus kamu selesaikan hari ini</p>
+
+<div class="progress-box">
+<div class="progress-text">Progress hari ini</div>
+
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+</div>
+
+<div class="input-group">
+<input type="text" id="taskInput" placeholder="Tulis tugas...">
+<button onclick="addTask()">Tambah</button>
+</div>
+
+<div class="filter-box">
+<button onclick="setFilter('all')">Semua</button>
+<button onclick="setFilter('active')">Belum</button>
+<button onclick="setFilter('done')">Selesai</button>
+</div>
+
+<ul id="taskList"></ul>
+
+<p class="empty" id="emptyText">Belum ada tugas</p>
+
+<p class="counter" id="taskCounter"></p>
+
+<p class="footer">keep your life a little organized</p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
