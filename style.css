@@ -68,7 +68,8 @@ transition:0.3s;
 .input-group{
 display:flex;
 gap:10px;
-margin-bottom:15px;
+align-items:center;
+margin-top:15px;
 }
 
 .input-group input{
@@ -190,4 +191,52 @@ color:#ffffff;
 
 .dark .progress-bar{
 background:#d1afaf;
+}
+
+.deadline {
+  display: block;
+  font-size: 12px;
+  color: gray;
+}
+
+.input-group input[type="date"] {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#taskInput{
+flex:2;
+}
+
+#deadlineInput{
+flex:1;
+}
+
+.input-group button{
+flex:0;
+white-space:nowrap;
+}
+
+.task{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+}
+
+.task-content{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.task button{
+margin-left:5px;
+}
+
+.deadline{
+font-size:12px;
+color:#888;
+margin-top:3px;
 }
