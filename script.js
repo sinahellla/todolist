@@ -1,22 +1,28 @@
 let tasks=[]
 let filter="all"
 
-function addTask(){
+function addTask() {
+  const taskInput = document.getElementById("taskInput");
+  const deadlineInput = document.getElementById("deadlineInput");
 
-let input=document.getElementById("taskInput")
-let text=input.value.trim()
+  const taskText = taskInput.value.trim();
+  const deadline = deadlineInput.value;
 
-if(text==="") return
+  if (taskText === "") return;
 
-tasks.push({
-text:text,
-done:false,
-priority:false
-})
+  const task = {
+    text: taskText,
+    deadline: deadline,
+    done: false
+  };
 
-input.value=""
+  tasks.push(task);
 
-renderTasks()
+  taskInput.value = "";
+  deadlineInput.value = "";
+
+  saveTasks();
+  renderTasks();
 }
 
 function toggleTask(index){
@@ -59,12 +65,15 @@ visible++
 
 if(task.done) done++
 
-list.innerHTML+=`
+list.innerHTML += `
 <li class="task ${task.done ? "done":""}">
 
 <input type="checkbox" ${task.done ? "checked":""} onclick="toggleTask(${index})">
 
-<span>${task.priority ? "⭐ " : ""}${task.text}</span>
+<div class="task-content">
+<span class="task-text">${task.priority ? "⭐ " : ""}${task.text}</span>
+<small class="deadline">Deadline: ${task.deadline || "tidak ada"}</small>
+</div>
 
 <button onclick="togglePriority(${index})">⭐</button>
 <button onclick="deleteTask(${index})">🗑</button>
